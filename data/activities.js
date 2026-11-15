@@ -1,184 +1,752 @@
-/*
- * EDIT THE GAME HERE. All information about Harbourline is taken from the
- * uploaded fictional teaching case, not real-world market research.
- * A field called 'judgment' means a defensible interpretation, not an established fact.
- * Each caseReference is a page in Case Facilitation #5: Harbourline Creative.
- */
-
-export const modules = [
-  { id: 'quiz', number: '01', name: 'Case Intelligence', short: 'The evidence round', type: 'MULTIPLE CHOICE', icon: '◈', description: 'Separate the facts from the story. What do we actually know?', skill: 'Performance · Evidence', accent: 'mint' },
-  { id: 'drag', number: '02', name: 'Framework Lab', short: 'Drag & drop', type: 'DRAG TO MATCH', icon: '⬡', description: 'Place strategy concepts beside their correct meaning and evidence.', skill: 'External & Internal', accent: 'blue' },
-  { id: 'pairs', number: '03', name: 'Connect the Dots', short: 'Match the following', type: 'CONNECT THE PAIRS', icon: '⌘', description: 'Link Harbourline case signals to their strategic implications.', skill: 'Interpretation · SWOT', accent: 'violet' },
-  { id: 'truefalse', number: '04', name: 'Truth or Assumption?', short: 'True / false', type: 'FACT CHECK', icon: '◎', description: 'Challenge claims that sound convincing but go beyond the evidence.', skill: 'Critical Thinking', accent: 'amber' },
-  { id: 'decision', number: '05', name: 'The Boardroom', short: 'Decision challenge', type: 'STRATEGIC DECISIONS', icon: '◇', description: 'Choose a path, then debate the consequences and trade-offs.', skill: 'Alternatives · Trade-offs', accent: 'coral' },
-  { id: 'rank', number: '06', name: '90-Day Mission', short: 'Rank priorities', type: 'PRIORITY CHALLENGE', icon: '☷', description: 'Build a realistic sequence of strategic priorities under constraints.', skill: 'Recommendation · Execution', accent: 'mint' },
-];
-
-export const quiz = [
-  {
-    id:'q1', difficulty:'Easy', kind:'Case fact', question:'What did the tourism client question in its email to Harbourline?',
-    options:['The need for all marketing services','The campaign fee and six-week schedule','Whether the company had a legal trademark','The number of office locations'], answer:1,
-    explanation:'The client liked the proposal, but an employee had used AI to create attractive images, ads and posts quickly. That prompted questions about the fee and six-week timeline.',
-    discussion:'Is speed of content production the same as value of a campaign?', source:'Case p. 1'
-  },
-  {
-    id:'q2', difficulty:'Medium', kind:'Data interpretation', question:'What is the most careful interpretation of the 24 client interviews?',
-    options:['15 want only content and 9 want only advice','Every interviewee agreed to pay for a new service','Interests overlap; 6 clients mentioned both, and demand is still unproven','Harbourline should discontinue all routine production'], answer:2,
-    explanation:'15 considered a recurring content package, 9 named strategic advice, and 6 expressed both. These are overlapping interests, not exclusive segments or purchase commitments.',
-    discussion:'Why would it be misleading to turn interview interest into a revenue forecast?', source:'Case p. 2 and Exhibit 1, p. 6'
-  },
-  {
-    id:'q3', difficulty:'Easy', kind:'Case fact', question:'How many clients had committed to paid trials of revised services?',
-    options:['24','15','9','5'], answer:3,
-    explanation:'Only 5 had committed to a paid trial. None had agreed to an annual renewal.',
-    discussion:'What does a paid trial prove—and what does it not prove?', source:'Case p. 2'
-  },
-  {
-    id:'q4', difficulty:'Medium', kind:'Performance analysis', question:'Which measure would most directly address the tourism client’s stated business problem?',
-    options:['Number of AI images generated','Total impressions across all booking periods','Change in weekday booking demand, alongside relevant context','Hours spent writing campaign copy'], answer:2,
-    explanation:'The property already filled weekends and struggled during the week. Weekday booking demand aligns with the client objective, although pricing, room availability, and weather also matter.',
-    discussion:'How could Harbourline measure contribution without falsely claiming all bookings were caused by its campaign?', source:'Case p. 1; Exhibit 1, p. 6'
-  },
-  {
-    id:'q5', difficulty:'Hard', kind:'Capability judgment', question:'What can Harbourline conclude from its 10 standardized-content AI pilots?',
-    options:['AI improves sales across all client accounts','Early drafts were faster in these trials, but quality review remained important','The agency no longer needs human reviewers','Its AI tools are proprietary and rare'], answer:1,
-    explanation:'The pilots showed faster initial drafting and more variations under relatively favourable conditions. Staff still corrected claims, details, accessibility and brand consistency; wider outcomes were not established.',
-    discussion:'What additional trial design would support a stronger claim about productivity?', source:'Case p. 3'
-  },
-  {
-    id:'q6', difficulty:'Hard', kind:'Strategic judgment', question:'Which statement best describes Harbourline’s potential competitive advantage?',
-    options:['Commercial AI access alone is rare','Longstanding relationships guarantee future renewals','The company has no useful resources','Its knowledge and judgment can create value, but consistent differentiation is not yet proven'], answer:3,
-    explanation:'Local knowledge and brand judgment appear valuable, but their rarity, imitability and repeatable delivery are uncertain. Similar AI access is available to competitors.',
-    discussion:'What evidence would you need to test whether client relationships pass VRIO?', source:'Exhibit 2, p. 7; Course Chapter 5'
-  },
-  {
-    id:'q7', difficulty:'Medium', kind:'Implementation fact', question:'Which resource constraint must a credible initial strategy respect?',
-    options:['A requirement to hire an entire research department immediately','Unlimited technology investment','A bounded trial, no immediate major hiring or build, and no involuntary layoffs in year 1','A guarantee of client sales outcomes'], answer:2,
-    explanation:'The founders support a limited trial, selective staff development and potentially a specialist partner, but not immediate team expansion or a major build. They committed to no involuntary layoffs in the first year.',
-    discussion:'How does this constraint change the feasibility of a premium advisory strategy?', source:'Case pp. 1, 4, 7'
-  }
-];
-
-export const dragRounds = [
-  {
-    id:'d1', title:'Know your strategy tools', instruction:'Drag each strategy concept onto the correct definition. Tap-to-select also works.', kind:'Course framework',
-    terms:[{id:'vrio',label:'VRIO'},{id:'pestel',label:'PESTEL'},{id:'swot',label:'SWOT'},{id:'five',label:'Porter’s Five Forces'}],
-    targets:[{id:'swot',label:'Synthesizes supported internal strengths/weaknesses with external opportunities/threats.'},{id:'five',label:'Examines the competitive pressures that shape industry profit potential.'},{id:'pestel',label:'Assesses broad political, economic, social, technological, environmental and legal factors.'},{id:'vrio',label:'Tests whether a resource is valuable, rare, difficult to imitate and organized for value.'}],
-    explanation:'Use the tools to reason from evidence to strategic judgments; simply naming a framework is not analysis.', discussion:'Which tool most directly helps explain why commercial AI access is not a lasting advantage?', source:'Course Chapters 4–6'
-  },
-  {
-    id:'d2', title:'Sort the external pressure', instruction:'Connect each external pressure to the supported Harbourline case example.', kind:'Case evidence',
-    terms:[{id:'buyer',label:'Buyer power'},{id:'sub',label:'Substitution'},{id:'rival',label:'Competitive rivalry'},{id:'trust',label:'Data / trust constraint'}],
-    targets:[{id:'trust',label:'Contracts require permission before confidential client information enters an external AI system.'},{id:'rival',label:'Freelancers, large agencies and self-service tools offer overlapping alternatives.'},{id:'sub',label:'A former small-business client now makes routine social posts internally.'},{id:'buyer',label:'A finance manager challenges the agency fee and wants a clear reason to pay.'}],
-    explanation:'One observation can affect several forces. These matches identify the strongest direct case connection, not the only possible interpretation.', discussion:'Is an in-house marketing employee a competitor, a substitute, or both depending on how we define the industry?', source:'Case pp. 2, 4–6'
-  },
-  {
-    id:'d3', title:'From resources to capabilities', instruction:'Match each issue to the most relevant internal capability or gap.', kind:'Internal analysis',
-    terms:[{id:'knowledge',label:'Knowledge management gap'},{id:'measurement',label:'Measurement gap'},{id:'governance',label:'AI governance gap'},{id:'incentives',label:'Misaligned incentives'}],
-    targets:[{id:'incentives',label:'Employees receive more recognition for winning and completing work than questioning a weak brief.'},{id:'measurement',label:'Campaign reports track clicks and reach without consistently tracing customer outcomes.'},{id:'knowledge',label:'Reasons behind past client decisions live in personal folders and employee memory.'},{id:'governance',label:'No shared standard governs AI evidence, review, documentation and disclosure.'}],
-    explanation:'The core issue is not lacking assets alone; it is lacking routines that make valuable expertise repeatable.', discussion:'Which gap would you address first if Harbourline had only 90 days?', source:'Case p. 4; Exhibit 2, p. 7'
-  }
-];
-
-export const pairRounds = [
-  {
-    id:'p1', title:'Connect the evidence to the implication', kind:'Interpretation',
-    left:[{id:'a',label:'Tourism: weekend promotion for a property with weak weekdays'},{id:'b',label:'Retail: email clicks with no clear link to repeat purchase'},{id:'c',label:'Professional services: generic articles resemble competitors'},{id:'d',label:'Former client: routine social posts now created in-house'}],
-    right:[{id:'c',label:'Distinctive positioning matters more than publishing volume.'},{id:'a',label:'The output can look polished while targeting the wrong business problem.'},{id:'d',label:'Routine creative production faces genuine substitution.'},{id:'b',label:'Campaign metrics are not the same as customer outcomes.'}],
-    explanation:'Each match connects a specific fact from Exhibit 1 to a reasonable strategic implication.', discussion:'Which implication is most urgent for the agency to address and why?', source:'Case p. 1; Exhibit 1, p. 6'
-  },
-  {
-    id:'p2', title:'Evidence vs. assumption', kind:'Critical reading',
-    left:[{id:'a',label:'Five clients agreed to a paid trial'},{id:'b',label:'Ten AI pilots produced faster early drafts'},{id:'c',label:'Several clients have divided work among providers'},{id:'d',label:'No dedicated measurement lead is in place'}],
-    right:[{id:'d',label:'Evidence of a capability gap, not proof that the company can never measure results.'},{id:'c',label:'Evidence of service unbundling, not a measured industry-wide market share shift.'},{id:'a',label:'Early willingness to test, not evidence of annual renewal demand.'},{id:'b',label:'Promising efficiency under tested conditions, not proof of better client outcomes.'}],
-    explanation:'The case repeatedly distinguishes what is observed from broader claims that still require testing.', discussion:'What assumption in the proposed strategy would you test first?', source:'Case pp. 2–4, 6–7'
-  },
-  {
-    id:'p3', title:'Who needs what?', kind:'Customer behavior',
-    left:[{id:'a',label:'Marketing coordinator'},{id:'b',label:'Business owner'},{id:'c',label:'Finance manager'},{id:'d',label:'Harbourline account director'}],
-    right:[{id:'d',label:'Needs a consistent explanation of AI use, fees and the agency’s role.'},{id:'b',label:'Wants confidence that marketing contributes to business goals.'},{id:'a',label:'Values fast, usable material and fewer approval rounds.'},{id:'c',label:'Wants an understandable justification for the agency fee.'}],
-    explanation:'Different people inside one client organization judge value differently. Account directors often learn of budget concerns late.', discussion:'Who needs to attend Harbourline’s next client value conversation?', source:'Case p. 2'
-  }
-];
-
-export const trueFalse = [
-  {id:'t1',statement:'The 15 clients interested in recurring content and the 9 interested in strategic advice form two mutually exclusive groups.',answer:false,difficulty:'Medium',kind:'Fact check',explanation:'False. Six clients expressed both preferences. The interviews do not show two neat groups.',discussion:'How would incorrectly treating these as separate groups distort a product strategy?',source:'Case p. 2'},
-  {id:'t2',statement:'Harbourline has financial statements that prove its profits have already declined because of AI.',answer:false,difficulty:'Easy',kind:'Evidence gap',explanation:'False. The case provides no revenue, profit or margin figures. Pressure on fees is a risk, not evidence of a measured profit decline.',discussion:'Which missing financial measures would you request?',source:'Case p. 8'},
-  {id:'t3',statement:'A campaign can increase engagement while still failing to address the client’s actual marketing objective.',answer:true,difficulty:'Medium',kind:'Interpretation',explanation:'True. A retailer campaign earned more engagement after broader targeting, but Harbourline had not shown that the reached audience was likely to buy or return.',discussion:'Who should define the metric used to judge a campaign?',source:'Case p. 3'},
-  {id:'t4',statement:'Harbourline can upload all confidential client records into outside AI tools because the files are stored at the agency.',answer:false,difficulty:'Easy',kind:'Contractual fact',explanation:'False. Existing contracts require explicit client permission before confidential information enters an external system.',discussion:'How should permissions affect which AI tools the agency chooses?',source:'Case p. 4'},
-  {id:'t5',statement:'Strong local client relationships are automatically a sustained competitive advantage under VRIO.',answer:false,difficulty:'Hard',kind:'VRIO reasoning',explanation:'False. The relationships are valuable, but the case does not establish that they are rare or hard to imitate. Knowledge is also concentrated in individuals.',discussion:'What would show that Harbourline is organized to capture this relationship value?',source:'Exhibit 2, p. 7; Course Chapter 5'},
-  {id:'t6',statement:'The board wants an initial 90-day plan with responsibilities and conditions to continue, change or stop the trial.',answer:true,difficulty:'Easy',kind:'Case fact',explanation:'True. Elena has three weeks to recommend a direction; the board also wants a 90-day trial plan with owners and decision conditions.',discussion:'What would be a meaningful stop condition?',source:'Case p. 5'}
-];
-
-export const decisions = [
-  {
-    id:'s1', title:'The tourism client challenge', tag:'Client value', scene:'A client can create polished ads with AI and asks why Harbourline charges its existing fee. The proposed campaign pushes weekend stays, but the property already fills on weekends and struggles midweek.',
-    question:'What should Elena propose in the next client conversation?',
-    options:[
-      {id:'a',label:'Match the AI output price immediately and promise the same content faster.',consequence:'May address price objections, but does not solve the weekday demand problem or demonstrate why expertise matters.',labelType:'Trade-off'},
-      {id:'b',label:'Offer a paid diagnosis of weekday demand, a revised campaign test, and transparent AI-assisted execution.',consequence:'Links the offer to a client business problem and tests willingness to pay for advice. Results still depend on client pricing, capacity and weather.',labelType:'Preferred test'},
-      {id:'c',label:'Guarantee a specific increase in bookings to protect the existing fee.',consequence:'A strong-sounding promise, but Harbourline does not fully control bookings and the founders do not want sales guarantees.',labelType:'High risk'},
-      {id:'d',label:'Explain that human creativity is priceless and refuse to discuss fee structure.',consequence:'May defend agency identity, but ignores legitimate AI production gains and finance-manager scrutiny.',labelType:'Weak fit'}
-    ], preferred:'b', reasoning:'A bounded, measurable test addresses the real business problem while acknowledging AI efficiency and limited control over results.', discussion:'Would you pay a diagnostic fee if the agency cannot promise bookings? What proof would change your decision?', source:'Case pp. 1–2; Exhibit 1, p. 6'
-  },
-  {
-    id:'s2', title:'The retailer’s repeat-purchase problem', tag:'Measurement', scene:'A retailer can write product emails internally. It wants customers to return without constant discounts. Email clicks have increased before, but repeat purchases are not well tracked and customer records are incomplete.',
-    question:'Which action best fits the evidence and resource limits?',
-    options:[
-      {id:'a',label:'Increase email volume immediately and report clicks as success.',consequence:'Easy to execute but repeats the same measurement problem and may increase irrelevant communication.',labelType:'Weak fit'},
-      {id:'b',label:'Buy a large proprietary data platform before testing anything.',consequence:'Could eventually improve analysis but does not fit the founders’ refusal of a major technology build.',labelType:'Poor feasibility'},
-      {id:'c',label:'Agree on a narrow customer segment, permissions, and a feasible repeat-purchase measure before a small test.',consequence:'Starts with usable data and a business outcome. It may delay launch and cannot prove causality without more careful design.',labelType:'Preferred test'},
-      {id:'d',label:'Offer a discount and avoid discussing data quality.',consequence:'May help with budget concerns short term, but weak records still prevent useful personalization and evaluation.',labelType:'Trade-off'}
-    ], preferred:'c', reasoning:'Agreeing on the objective, permission and usable data comes before AI-driven personalization; test design should match what can actually be measured.', discussion:'If purchase attribution is impossible, what weaker but honest measure would you use?', source:'Case pp. 2–3; Exhibit 1, p. 6'
-  },
-  {
-    id:'s3', title:'The AI trust dilemma', tag:'Governance', scene:'One account director openly explains AI use. Another hides it unless asked because clients may demand discounts. Employees also lack shared evidence and review standards.',
-    question:'What should the agency do first?',
-    options:[
-      {id:'a',label:'Ban all AI tools permanently.',consequence:'Would avoid some immediate risks but sacrifice genuine efficiency gains and learning opportunities.',labelType:'Trade-off'},
-      {id:'b',label:'Let each account director decide what to disclose.',consequence:'Keeps flexibility but increases inconsistency and the chance of a trust problem across accounts.',labelType:'High risk'},
-      {id:'c',label:'Claim all AI outputs are original research if a human reviewed them.',consequence:'Misrepresents evidence and violates the case’s explicit trust obligation.',labelType:'Not defensible'},
-      {id:'d',label:'Adopt shared permission, disclosure, evidence and quality-review rules, with accountable human sign-off.',consequence:'Protects trust and makes practices repeatable, but requires staff time and careful implementation.',labelType:'Preferred test'}
-    ], preferred:'d', reasoning:'Commercial AI tools are not proprietary differentiation. Consistent judgment and accountability are more credible parts of the value proposition.', discussion:'How much detail about AI use is enough to be transparent without overwhelming clients?', source:'Case pp. 4–5'
-  },
-  {
-    id:'s4', title:'The board has 90 days', tag:'Capabilities', scene:'Harbourline has one analytics-capable campaign specialist, no measurement lead, uneven AI skills, and a no-layoff commitment. Founders support selective training and possibly a defined specialist partner.',
-    question:'Which capability-development path is most defensible?',
-    options:[
-      {id:'a',label:'Immediately hire a full analytics and strategy department.',consequence:'Would add expertise but contradicts the resource constraints in the case.',labelType:'Poor feasibility'},
-      {id:'b',label:'Pilot a common brief-to-measurement process, coach juniors, and use a specialist partner for a defined gap.',consequence:'Builds repeatable routines with controlled scope. The partner must have clear accountability, permissions and cost limits.',labelType:'Preferred test'},
-      {id:'c',label:'Continue using personal folders and informal senior review.',consequence:'Avoids process costs now, but preserves dependency on individuals and makes learning hard to repeat.',labelType:'High risk'},
-      {id:'d',label:'Train only senior creatives and stop involving junior employees.',consequence:'Could speed a few decisions initially, but undermines the development of future capabilities.',labelType:'Weak fit'}
-    ], preferred:'b', reasoning:'The case supports selective development and a bounded partnership rather than immediate expansion. The point is to develop an organizational capability, not just add technology.', discussion:'What concrete result after 90 days would demonstrate a repeatable capability?', source:'Case p. 4; Exhibit 2, p. 7'
-  },
-  {
-    id:'s5', title:'Choose the market position', tag:'Strategy', scene:'Harbourline’s buyers want different things: some need affordable recurring content, while others seek difficult marketing decisions. Only 5 have committed to paid trials and separate advice fees are untested.',
-    question:'Which market position should the board test first?',
-    options:[
-      {id:'a',label:'A low-cost content factory competing mainly on production volume.',consequence:'Could attract price-sensitive clients but faces AI parity and may weaken differentiation.',labelType:'Defensible for a niche'},
-      {id:'b',label:'Immediate pivot to strategy-only consultancy with no production.',consequence:'Clear positioning, but unproven advice demand and thin capabilities make a sudden transition risky.',labelType:'Potential long-term path'},
-      {id:'c',label:'Transparent AI-assisted execution plus a separately scoped advisory/diagnostic offer for selected clients.',consequence:'A testable hybrid consistent with mixed client needs; it must prove buyers will pay and the agency can deliver advice.',labelType:'Preferred test'},
-      {id:'d',label:'Keep the current hours-and-deliverables model unchanged.',consequence:'Minimal disruption but fails to address the value and pricing challenge that initiated the case.',labelType:'High risk'}
-    ], preferred:'c', reasoning:'A two-part offer is a recommendation to test, not a fact established by the case. Different choices may be defensible under different evidence or goals.', discussion:'Which single new piece of evidence might cause your team to prefer an alternative strategy?', source:'Case pp. 2, 5–7'
-  }
-];
-
-export const rankRounds = [
-  {
-    id:'r1', title:'First 30 days: what comes first?', kind:'Implementation judgment', prompt:'The board approves a limited trial. Rank what you would do FIRST to LAST in the opening phase. There is no uniquely correct order.',
-    items:[{id:'a',label:'Assign one owner for the revised value proposition'},{id:'b',label:'Agree client problem and success measures with trial buyers'},{id:'c',label:'Set AI permissions, disclosure and review rules'},{id:'d',label:'Map capability gaps and plan selective training'},{id:'e',label:'Create a draft two-part service offer and price hypothesis'}],
-    initial:['e','d','c','b','a'], suggested:['a','b','c','e','d'], rationale:'One defensible sequence creates accountability, defines value, protects trust, then tests an offer and capability plan. Another team could place AI governance first if its risk assessment is higher.', discussion:'Which step is a dependency for another step? What would you rearrange?', source:'Case pp. 1, 4–5, 7'
-  },
-  {
-    id:'r2', title:'What should the pilot measure?', kind:'Evaluation judgment', prompt:'Rank the evidence you would most want before recommending a wider rollout. Explain why some measures matter more.',
-    items:[{id:'a',label:'Client willingness to purchase or renew at a stated price'},{id:'b',label:'Evidence of progress against the client’s chosen objective'},{id:'c',label:'Quality and trust issues found during human review'},{id:'d',label:'Total staff time saved after all AI review and rework'},{id:'e',label:'Documented learning that can transfer to another account'}],
-    initial:['d','e','b','c','a'], suggested:['b','a','c','d','e'], rationale:'Client-relevant value and willingness to pay are central to the decision, but governance and genuine net efficiency are necessary feasibility tests. The exact order depends on risk tolerance.', discussion:'Which metric must be a “stop” threshold rather than a bonus objective?', source:'Case pp. 2–5, 7'
-  },
-  {
-    id:'r3', title:'The 90-day board decision', kind:'Strategic prioritization', prompt:'The trial produces mixed results. Prioritize board actions, considering long-term competitiveness and limited resources.',
-    items:[{id:'a',label:'Review the evidence and assumptions with the five pilot clients'},{id:'b',label:'Protect client trust: address quality and data-permission risks'},{id:'c',label:'Decide which service elements to continue, change or stop'},{id:'d',label:'Define ownership, staff development and partner needs for the next phase'},{id:'e',label:'Only then approve wider rollout or additional spending'}],
-    initial:['e','d','c','a','b'], suggested:['b','a','c','d','e'], rationale:'This suggested order puts non-negotiable trust risks first, reviews client evidence, decides what merits continuation, and scales only after feasibility is established.', discussion:'Under what conditions would you stop an otherwise profitable service trial?', source:'Case pp. 4–5, 7'
-  }
-];
-
-export const byModule = { quiz, drag:dragRounds, pairs:pairRounds, truefalse:trueFalse, decision:decisions, rank:rankRounds };
+/* EDITABLE BADM 470 CASE CONTENT — facts sourced to fictional Harbourline Creative case; interpretations labeled in explanations. */
+export const content = {
+  "steps": [
+    {
+      "id": "performance",
+      "num": "01",
+      "name": "Organizational performance",
+      "title": "Case Intelligence",
+      "subtitle": "15 questions · Chapter 3",
+      "minutes": 12
+    },
+    {
+      "id": "external",
+      "num": "02",
+      "name": "External environment",
+      "title": "Market Forces Lab",
+      "subtitle": "PESTEL · Five Forces · Strategic map",
+      "minutes": 15
+    },
+    {
+      "id": "internal",
+      "num": "03",
+      "name": "Internal environment",
+      "title": "Capability Lab",
+      "subtitle": "10 flashcards · 6 VRIO tests",
+      "minutes": 15
+    },
+    {
+      "id": "swot",
+      "num": "04",
+      "name": "SWOT synthesis",
+      "title": "Build the SWOT",
+      "subtitle": "Drag and drop · evidence filter",
+      "minutes": 10
+    },
+    {
+      "id": "concerns",
+      "num": "05",
+      "name": "Strategic concerns",
+      "title": "Choose the Five",
+      "subtitle": "Select the five most important concerns",
+      "minutes": 7
+    },
+    {
+      "id": "issue",
+      "num": "06",
+      "name": "Strategic issue",
+      "title": "Define the Real Problem",
+      "subtitle": "Group handout · one-sentence challenge",
+      "minutes": 7
+    },
+    {
+      "id": "alternatives",
+      "num": "07",
+      "name": "Strategic alternatives",
+      "title": "The Boardroom",
+      "subtitle": "Group handout · compare three paths",
+      "minutes": 10
+    },
+    {
+      "id": "recommendation",
+      "num": "08",
+      "name": "Recommendation",
+      "title": "Make the Decision",
+      "subtitle": "Class vote · rationale · 90-day pilot",
+      "minutes": 6
+    },
+    {
+      "id": "congruence",
+      "num": "09",
+      "name": "Line of sight",
+      "title": "The Logic Check",
+      "subtitle": "Evidence → diagnosis → choice → execution",
+      "minutes": 6
+    },
+    {
+      "id": "debrief",
+      "num": "10",
+      "name": "Closing debrief",
+      "title": "What Did We Learn?",
+      "subtitle": "Reflection · unanswered questions",
+      "minutes": 4
+    }
+  ],
+  "quiz": [
+    {
+      "id": "q1",
+      "question": "Where is Harbourline Creative based?",
+      "options": [
+        "Vancouver, British Columbia",
+        "Toronto, Ontario",
+        "Victoria, British Columbia",
+        "Seattle, Washington"
+      ],
+      "answer": 0,
+      "explanation": "The case describes a Vancouver marketing agency.",
+      "source": "p. 1"
+    },
+    {
+      "id": "q2",
+      "question": "Which clients does the agency mainly serve?",
+      "options": [
+        "Tourism operators, retailers and professional-service firms",
+        "Mining, airlines and car manufacturers",
+        "Universities and national banks only",
+        "Telecommunications and large government agencies"
+      ],
+      "answer": 0,
+      "explanation": "The agency serves tourism, specialty retail and professional-services clients in its region.",
+      "source": "p. 1"
+    },
+    {
+      "id": "q3",
+      "question": "How many people are in Harbourline’s delivery team?",
+      "options": [
+        "8",
+        "10",
+        "12",
+        "20"
+      ],
+      "answer": 2,
+      "explanation": "The case states there are 12 delivery-team employees, in addition to account directors and other support.",
+      "source": "p. 1"
+    },
+    {
+      "id": "q4",
+      "question": "What triggered the tourism client’s concerns?",
+      "options": [
+        "A major data breach",
+        "AI-generated drafts raised questions about the fee and six-week schedule",
+        "Harbourline announced a price increase of 50%",
+        "A failed website launch"
+      ],
+      "answer": 1,
+      "explanation": "An employee made attractive images, ads and posts with AI over a weekend.",
+      "source": "p. 1"
+    },
+    {
+      "id": "q5",
+      "question": "What was wrong with the tourism AI campaign?",
+      "options": [
+        "It promoted weekends although weak weekday demand was the actual problem",
+        "It included no images",
+        "It was written only in French",
+        "It promoted a different hotel"
+      ],
+      "answer": 0,
+      "explanation": "The property already fills weekends; it needs more weekday demand.",
+      "source": "p. 1"
+    },
+    {
+      "id": "q6",
+      "question": "How many current and former clients were interviewed?",
+      "options": [
+        "15",
+        "9",
+        "24",
+        "50"
+      ],
+      "answer": 2,
+      "explanation": "Harbourline interviewed 24 current and former clients.",
+      "source": "p. 2"
+    },
+    {
+      "id": "q7",
+      "question": "How many clients would consider a recurring content package?",
+      "options": [
+        "5",
+        "9",
+        "15",
+        "24"
+      ],
+      "answer": 2,
+      "explanation": "15 clients expressed interest in a predictable recurring content package.",
+      "source": "p. 2"
+    },
+    {
+      "id": "q8",
+      "question": "How many identified strategic advice as their main reason for an agency?",
+      "options": [
+        "6",
+        "9",
+        "12",
+        "15"
+      ],
+      "answer": 1,
+      "explanation": "9 clients identified strategic advice as their main reason for using an agency.",
+      "source": "p. 2"
+    },
+    {
+      "id": "q9",
+      "question": "How many clients expressed both preferences?",
+      "options": [
+        "3",
+        "5",
+        "6",
+        "9"
+      ],
+      "answer": 2,
+      "explanation": "The preferences overlap: 6 clients expressed interest in both.",
+      "source": "p. 2"
+    },
+    {
+      "id": "q10",
+      "question": "How many clients committed to paid trials?",
+      "options": [
+        "0",
+        "5",
+        "9",
+        "15"
+      ],
+      "answer": 1,
+      "explanation": "Only 5 committed to paid trials; none agreed to an annual renewal.",
+      "source": "p. 2"
+    },
+    {
+      "id": "q11",
+      "question": "Which metrics dominate existing marketing reports?",
+      "options": [
+        "Revenue and profit by campaign",
+        "Reach, engagement and completed assets",
+        "Weekday bookings and repeat purchasing",
+        "Client acquisition costs and retention rates"
+      ],
+      "answer": 1,
+      "explanation": "Current reports emphasize deliverables and marketing activity more than the client’s business outcomes.",
+      "source": "pp. 1, 3"
+    },
+    {
+      "id": "q12",
+      "question": "What outcome matters most to the specialty retailer?",
+      "options": [
+        "A larger ad budget",
+        "More website clicks regardless of purchases",
+        "More repeat purchasing",
+        "More weekend hotel bookings"
+      ],
+      "answer": 2,
+      "explanation": "The specialty retailer wants returning customers without relying on recurring discounts.",
+      "source": "Exhibit 1, p. 6"
+    },
+    {
+      "id": "q13",
+      "question": "What does the professional-service firm value most?",
+      "options": [
+        "Publishing the greatest number of generic articles",
+        "Credible expertise and suitable inquiries",
+        "Inexpensive stock illustrations",
+        "Expanding into tourism"
+      ],
+      "answer": 1,
+      "explanation": "It wants distinctiveness, credible expertise and qualified inquiries; consent is needed for some interviews.",
+      "source": "Exhibit 1, p. 6"
+    },
+    {
+      "id": "q14",
+      "question": "What financial figures can be calculated from the case?",
+      "options": [
+        "Net profit margin and ROI",
+        "Market capitalization",
+        "No financial ratios; required statements are not supplied",
+        "Revenue growth since 2023"
+      ],
+      "answer": 2,
+      "explanation": "The case gives no financial statements or forecast models. Do not invent quantitative performance metrics.",
+      "source": "p. 8"
+    },
+    {
+      "id": "q15",
+      "question": "What must Harbourline deliver to its board?",
+      "options": [
+        "A guaranteed increase in client sales",
+        "A 90-day pilot with owners and continue/change/stop conditions",
+        "An acquisition proposal",
+        "A plan to lay off half the delivery team"
+      ],
+      "answer": 1,
+      "explanation": "The board needs a practical 90-day pilot and decision conditions, with no involuntary layoffs in year one.",
+      "source": "pp. 1, 5"
+    }
+  ],
+  "pestel": [
+    {
+      "id": "p1",
+      "statement": "Accessible AI tools let clients produce advertisements and images more quickly.",
+      "answer": "Technological",
+      "kind": "Case fact",
+      "explanation": "AI changes production cost and client alternatives.",
+      "source": "pp. 1–3"
+    },
+    {
+      "id": "p2",
+      "statement": "Clients face more pressure to justify agency fees and compare service costs.",
+      "answer": "Economic",
+      "kind": "Case interpretation",
+      "explanation": "The buying conversation has a financial dimension; the case does not establish broader inflation or recession trends.",
+      "source": "pp. 2, 5"
+    },
+    {
+      "id": "p3",
+      "statement": "Some clients prefer speed while others prioritize professional judgment and credible advice.",
+      "answer": "Sociocultural",
+      "kind": "Case interpretation",
+      "explanation": "Different buyer expectations shape demand; social preferences are an interpretation, not a quantified trend.",
+      "source": "p. 2"
+    },
+    {
+      "id": "p4",
+      "statement": "Client contracts require explicit permission before confidential information enters outside AI systems.",
+      "answer": "Legal",
+      "kind": "Case fact",
+      "explanation": "This is a contractual obligation. It should not be misrepresented as a newly enacted law.",
+      "source": "p. 4"
+    },
+    {
+      "id": "p5",
+      "statement": "Advertising platforms automate targeting and recommend campaign changes.",
+      "answer": "Technological",
+      "kind": "Case fact",
+      "explanation": "Automation influences marketing execution and measurement.",
+      "source": "p. 3"
+    },
+    {
+      "id": "p6",
+      "statement": "The government imposed a new marketing-agency tax because of AI.",
+      "answer": "Not evidenced",
+      "kind": "Unsupported claim",
+      "explanation": "The case reports no such political policy or tax.",
+      "source": "p. 8"
+    },
+    {
+      "id": "p7",
+      "statement": "New environmental rules increased Harbourline’s printing costs.",
+      "answer": "Not evidenced",
+      "kind": "Unsupported claim",
+      "explanation": "The case supplies no evidence about these environmental costs or regulations.",
+      "source": "p. 8"
+    },
+    {
+      "id": "p8",
+      "statement": "Clients can compare AI-produced materials to agency deliverables before purchasing.",
+      "answer": "Technological",
+      "kind": "Case interpretation",
+      "explanation": "Technology increases transparency and can affect buyer power; multiple frameworks may apply.",
+      "source": "pp. 1–2"
+    }
+  ],
+  "forces": [
+    {
+      "id": "f1",
+      "statement": "A tourism client asks its finance manager whether the agency fee is justified.",
+      "force": "Buyer power",
+      "strength": "High",
+      "explanation": "Clients can question fees and compare alternatives; high buyer pressure is a reasoned evaluation.",
+      "source": "pp. 1–2"
+    },
+    {
+      "id": "f2",
+      "statement": "A former client now creates routine social posts inside its own business.",
+      "force": "Threat of substitutes",
+      "strength": "High for routine production",
+      "explanation": "The client replaced an external service with internal work; this is observed substitution.",
+      "source": "Exhibit 1, p. 6"
+    },
+    {
+      "id": "f3",
+      "statement": "Freelancers and larger agencies offer overlapping marketing services.",
+      "force": "Competitive rivalry",
+      "strength": "Significant",
+      "explanation": "The case names competing provider categories, but does not quantify rivalry intensity.",
+      "source": "p. 5"
+    },
+    {
+      "id": "f4",
+      "statement": "AI may reduce the technical cost of starting a basic content service.",
+      "force": "Threat of new entrants",
+      "strength": "Insufficient evidence",
+      "explanation": "Lower tool costs suggest an entry mechanism but entry barriers, scale and actual entry are not measured.",
+      "source": "Ch. 4 inference; case p. 5"
+    },
+    {
+      "id": "f5",
+      "statement": "Harbourline relies on commercial AI subscriptions and other production inputs.",
+      "force": "Supplier power",
+      "strength": "Insufficient evidence",
+      "explanation": "Supplier concentration, switching costs and contract dependency are not provided.",
+      "source": "Exhibit 2, p. 7"
+    }
+  ],
+  "resources": [
+    {
+      "id": "r1",
+      "front": "Experienced account directors who know local clients",
+      "answer": "Resource",
+      "explanation": "People and their knowledge are assets the agency can access.",
+      "source": "p. 4"
+    },
+    {
+      "id": "r2",
+      "front": "Recognizing when a client brief targets the wrong business problem",
+      "answer": "Capability",
+      "explanation": "Applying expertise to diagnose weak briefs is something people do; it is not yet consistent agency-wide.",
+      "source": "pp. 1, 4"
+    },
+    {
+      "id": "r3",
+      "front": "Commercial AI subscriptions accessible to employees",
+      "answer": "Resource",
+      "explanation": "Tool access is an asset; competitors can access similar tools.",
+      "source": "Exhibit 2, p. 7"
+    },
+    {
+      "id": "r4",
+      "front": "Developing coherent visual identities and brand messages",
+      "answer": "Capability",
+      "explanation": "Coordinating design and judgment produces coherent brand work.",
+      "source": "Exhibit 2, p. 7"
+    },
+    {
+      "id": "r5",
+      "front": "Approved client files and past campaign records",
+      "answer": "Resource",
+      "explanation": "These are information assets, although permissions and organization vary.",
+      "source": "Exhibit 2, p. 7"
+    },
+    {
+      "id": "r6",
+      "front": "Reviewing AI-generated copy for inaccurate or unsupported claims",
+      "answer": "Capability",
+      "explanation": "Quality review is an activity; the case shows it happens but lacks uniform standards.",
+      "source": "pp. 3–4"
+    },
+    {
+      "id": "r7",
+      "front": "A campaign specialist with analytics expertise",
+      "answer": "Resource",
+      "explanation": "A knowledgeable employee is a human resource.",
+      "source": "p. 4"
+    },
+    {
+      "id": "r8",
+      "front": "Designing a limited test of campaign effectiveness",
+      "answer": "Capability",
+      "explanation": "Designing a test combines analytical expertise and relevant evidence.",
+      "source": "Exhibit 2, p. 7"
+    },
+    {
+      "id": "r9",
+      "front": "Long-standing client relationships",
+      "answer": "Resource",
+      "explanation": "Relationships are valuable organizational assets, not proof of sustained competitive advantage.",
+      "source": "Exhibit 2, p. 7"
+    },
+    {
+      "id": "r10",
+      "front": "Producing early AI-assisted drafts faster in standardized pilots",
+      "answer": "Capability",
+      "explanation": "The pilots demonstrate faster drafting in those conditions; not proven across all assignments.",
+      "source": "p. 3"
+    }
+  ],
+  "vrio": [
+    {
+      "id": "v1",
+      "title": "Commercial AI tool access",
+      "answers": [
+        "Yes",
+        "No",
+        "—",
+        "—"
+      ],
+      "explanation": "Similar access is available to clients and competitors. Valuable, but not rare: competitive parity at best.",
+      "source": "Exhibit 2, p. 7"
+    },
+    {
+      "id": "v2",
+      "title": "Local client relationships",
+      "answers": [
+        "Yes",
+        "Unknown",
+        "Unknown",
+        "Partly"
+      ],
+      "explanation": "Valuable, but rarity and imitability lack comparative proof; knowledge is unevenly shared.",
+      "source": "Exhibit 2, p. 7"
+    },
+    {
+      "id": "v3",
+      "title": "Brand and creative judgment",
+      "answers": [
+        "Yes",
+        "Unknown",
+        "Unknown",
+        "Partly"
+      ],
+      "explanation": "Strong creative work exists, but validated claims and documented routines are inconsistent.",
+      "source": "Exhibit 2, p. 7"
+    },
+    {
+      "id": "v4",
+      "title": "Local market and client knowledge",
+      "answers": [
+        "Yes",
+        "Unknown",
+        "Unknown",
+        "No / limited"
+      ],
+      "explanation": "Knowledge is valuable yet concentrated in individuals; the agency cannot use it reliably across accounts.",
+      "source": "pp. 4, 7"
+    },
+    {
+      "id": "v5",
+      "title": "Campaign outcome measurement",
+      "answers": [
+        "Potentially",
+        "Unknown",
+        "Unknown",
+        "No / limited"
+      ],
+      "explanation": "One specialist can design limited tests, but measurement is not an agency-wide dependable capability.",
+      "source": "Exhibit 2, p. 7"
+    },
+    {
+      "id": "v6",
+      "title": "Challenging weak marketing briefs",
+      "answers": [
+        "Yes",
+        "Unknown",
+        "Unknown",
+        "Partly"
+      ],
+      "explanation": "Senior staff can challenge briefs but often join projects late, limiting consistent application.",
+      "source": "p. 4"
+    }
+  ],
+  "swot": [
+    {
+      "id": "s1",
+      "text": "Account directors know clients and regional conditions",
+      "answer": "S",
+      "source": "Exhibit 2, p. 7"
+    },
+    {
+      "id": "s2",
+      "text": "Creative staff develop coherent brand identities",
+      "answer": "S",
+      "source": "Exhibit 2, p. 7"
+    },
+    {
+      "id": "s3",
+      "text": "Senior employees can spot a weak client brief",
+      "answer": "S",
+      "source": "pp. 1, 4"
+    },
+    {
+      "id": "s4",
+      "text": "Customer knowledge is often held by individuals",
+      "answer": "W",
+      "source": "p. 4"
+    },
+    {
+      "id": "s5",
+      "text": "No dedicated research or measurement lead",
+      "answer": "W",
+      "source": "p. 4"
+    },
+    {
+      "id": "s6",
+      "text": "AI quality standards and disclosure vary by employee",
+      "answer": "W",
+      "source": "p. 4"
+    },
+    {
+      "id": "s7",
+      "text": "Reports emphasize clicks and reach over client outcomes",
+      "answer": "W",
+      "source": "pp. 1–3"
+    },
+    {
+      "id": "s8",
+      "text": "In-house content teams may buy occasional strategic advice",
+      "answer": "O",
+      "source": "p. 5; Exhibit 1, p. 6"
+    },
+    {
+      "id": "s9",
+      "text": "AI can reduce time required for standardized drafts",
+      "answer": "O",
+      "source": "p. 3"
+    },
+    {
+      "id": "s10",
+      "text": "Some clients express interest in strategic advice",
+      "answer": "O",
+      "source": "p. 2; demand unproven"
+    },
+    {
+      "id": "s11",
+      "text": "Clients replace routine agency production internally",
+      "answer": "T",
+      "source": "Exhibit 1, p. 6"
+    },
+    {
+      "id": "s12",
+      "text": "Freelancers and larger agencies offer competing services",
+      "answer": "T",
+      "source": "p. 5"
+    },
+    {
+      "id": "s13",
+      "text": "Clients question agency fees and compare alternatives",
+      "answer": "T",
+      "source": "pp. 1–2"
+    },
+    {
+      "id": "s14",
+      "text": "Harbourline has the highest agency profit margin in Vancouver",
+      "answer": "U",
+      "source": "No financial or peer comparison data, p. 8"
+    },
+    {
+      "id": "s15",
+      "text": "Competitors cannot imitate Harbourline’s relationships",
+      "answer": "U",
+      "source": "No comparative rarity evidence, Exhibit 2, p. 7"
+    },
+    {
+      "id": "s16",
+      "text": "Every client wants to eliminate outside agencies",
+      "answer": "U",
+      "source": "Client interviews show mixed interests, p. 2"
+    }
+  ],
+  "concerns": [
+    {
+      "id": "c1",
+      "text": "Clients struggle to see the value of Harbourline’s expertise",
+      "kind": "major",
+      "reason": "Client value and pricing are challenged.",
+      "source": "pp. 1–2"
+    },
+    {
+      "id": "c2",
+      "text": "Strategic advice cannot yet be delivered consistently",
+      "kind": "major",
+      "reason": "Measurement and knowledge routines are weak.",
+      "source": "pp. 4, 7"
+    },
+    {
+      "id": "c3",
+      "text": "Routine production is increasingly replaceable by AI",
+      "kind": "major",
+      "reason": "A former client moved production in-house.",
+      "source": "pp. 5–6"
+    },
+    {
+      "id": "c4",
+      "text": "Willingness to pay separately for advice is unproven",
+      "kind": "major",
+      "reason": "Interviews show interest, not broadly validated demand.",
+      "source": "p. 6"
+    },
+    {
+      "id": "c5",
+      "text": "Trust, data permissions and AI transparency need stronger governance",
+      "kind": "major",
+      "reason": "Contracts restrict data use and disclosure is inconsistent.",
+      "source": "pp. 4–5"
+    },
+    {
+      "id": "c6",
+      "text": "Junior employees need structured strategic development",
+      "kind": "defensible",
+      "reason": "Important internal capacity, but students should connect it to longer-term strategy.",
+      "source": "p. 4"
+    },
+    {
+      "id": "c7",
+      "text": "The tourism draft mistakenly emphasized weekend bookings",
+      "kind": "symptom",
+      "reason": "Specific symptom that exposes a broader issue about customer objectives.",
+      "source": "p. 1"
+    },
+    {
+      "id": "c8",
+      "text": "Harbourline should buy more AI software immediately",
+      "kind": "solution",
+      "reason": "This is an action, not a concern diagnosed from the case.",
+      "source": "pp. 1, 7"
+    },
+    {
+      "id": "c9",
+      "text": "The agency must hire 20 new employees",
+      "kind": "unsupported",
+      "reason": "No evidence supports this number; immediate expansion is not permitted.",
+      "source": "p. 1"
+    },
+    {
+      "id": "c10",
+      "text": "Reports count clicks and engagement instead of business outcomes",
+      "kind": "symptom",
+      "reason": "A concrete operating symptom of difficulty demonstrating value.",
+      "source": "pp. 1–3"
+    },
+    {
+      "id": "c11",
+      "text": "Harbourline’s revenue fell by 40%",
+      "kind": "unsupported",
+      "reason": "No financials are provided.",
+      "source": "p. 8"
+    },
+    {
+      "id": "c12",
+      "text": "Competing agencies and freelancers offer alternatives",
+      "kind": "evidence",
+      "reason": "An external pressure that supports deeper strategic concerns.",
+      "source": "p. 5"
+    }
+  ],
+  "alternatives": [
+    {
+      "id": "A",
+      "title": "Improve the Existing Model",
+      "subtitle": "Defend and improve",
+      "description": "Keep integrated creative services. Use AI to shorten routine work, explain human review and strategic reasoning more clearly, and improve reports within existing arrangements.",
+      "benefit": "Least disruptive; protects familiar services and relationships.",
+      "risk": "Clients may still see an expensive content-production model.",
+      "capability": "Standardized AI review, clearer client communication, baseline measurement.",
+      "assumption": "Efficiency and better explanations will be sufficient for enough existing clients."
+    },
+    {
+      "id": "B",
+      "title": "Transparent Two-Part Offer",
+      "subtitle": "Differentiate and test",
+      "description": "Offer clearly priced AI-assisted content production alongside a separately scoped, paid marketing diagnostic and advisory service. Test the structure with the 5 clients who committed to paid trials.",
+      "benefit": "Makes decision-making value visible and accommodates clients with different needs.",
+      "risk": "Demand for separately purchased advice remains unproven; research capacity is thin.",
+      "capability": "Service definitions, review and disclosure standards, analytical partner, staff training.",
+      "assumption": "Some buyers will pay for credible, documented strategic judgment."
+    },
+    {
+      "id": "C",
+      "title": "Refocus on Strategic Advisory",
+      "subtitle": "Specialize and transition",
+      "description": "Prioritize research, positioning, client diagnosis and performance learning. Gradually reduce dependence on routine creative production while retaining only strategically useful execution.",
+      "benefit": "Could differentiate on judgment rather than content volume.",
+      "risk": "Major execution risk because current analytics, research and knowledge-transfer routines are limited.",
+      "capability": "Stronger research and measurement expertise, repositioned sales approach, client approvals.",
+      "assumption": "Enough clients will buy premium advice, and the agency can build the delivery capability."
+    }
+  ]
+};
