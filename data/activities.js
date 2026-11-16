@@ -45,16 +45,16 @@ export const content = {
       "id": "issue",
       "num": "06",
       "name": "Strategic issue",
-      "title": "Issue and category sort",
-      "subtitle": "Symptoms · concerns · solutions",
+      "title": "One-sentence strategic issue",
+      "subtitle": "Frame one central decision",
       "minutes": 7
     },
     {
       "id": "alternatives",
       "num": "07",
       "name": "Strategic alternatives",
-      "title": "Three different strategies",
-      "subtitle": "Assign A/B/C · compare benefits and risks",
+      "title": "Three strategies + optional class option",
+      "subtitle": "Compare options · add a fourth if supported",
       "minutes": 10
     },
     {
@@ -69,8 +69,8 @@ export const content = {
       "id": "congruence",
       "num": "09",
       "name": "Line of sight",
-      "title": "The Logic Check",
-      "subtitle": "Evidence → diagnosis → choice → execution",
+      "title": "2-minute line-of-sight check",
+      "subtitle": "Connect evidence to the selected option",
       "minutes": 6
     },
     {
