@@ -1,53 +1,53 @@
-# Harbourline Creative — The Strategy Challenge
+# Harbourline Creative — Facilitator-Led Strategy Challenge
 
-A **static, facilitator-controlled website** for Capilano University BADM 470 Case Facilitation #5. The activities follow the abbreviated Chapter 2 case analysis sequence, applying Chapters 3–7. This version replaces the old game-type menu with ten connected case-analysis steps.
+Interactive static website for Capilano University BADM 470, based on the fictional Harbourline Creative case and Chapters 2–7.
 
-## Run the website
+**Live site:** https://meetgoyani5.github.io/harbourline-strategy-challenge/
 
-- For local use, open a terminal in this folder and run `python3 -m http.server 8000`, then open <http://localhost:8000>.
-- The `index.html` uses native ES modules; running a local server is more reliable than opening it via `file://`.
-- In GitHub Pages, publish the repository from `main` → `/(root)` **or** use the included Actions workflow (choose one Pages source).
-- Project URL: <https://meetgoyani5.github.io/harbourline-strategy-challenge/>. GitHub Pages requires a successful deployment before the URL becomes live.
+## Classroom workflow
 
-## Facilitation plan — 95 minutes
+1. Distribute the **2-page case overview** and **4-page student handouts** (separately, as activities begin).
+2. Give groups time to analyze and write their own answers **before** displaying the facilitator’s interpretation.
+3. Ask a group to present a short answer, then use the website to classify, compare, or reveal supporting evidence.
+4. **Correct answer: +1 point.** The next group gets the following turn. **Incorrect answer: 0 points**, an optional wrong-answer tone, and the question passes to another group. The facilitator controls correctness for open-ended answers.
+5. Reveal the winning group on the final results screen; ties can be broken with one evidence-based follow-up.
 
-| Step | Activity | Minutes |
-| --- | --- | ---: |
-| Opening | Case framing and game instructions | 3 (on homepage) |
-| 01 Performance | 15 case-understanding questions; identify 3 performance concerns | 12 |
-| 02 External | PESTEL sentences, Five Forces classification and strength, strategic group mapping | 15 |
-| 03 Internal | 10 resource/capability flip cards; 6 sequential VRIO exercises | 15 |
-| 04 SWOT | 16-card drag-and-drop SWOT with unsupported category | 10 |
-| 05 Strategic concerns | Select 5 from 12 statements | 7 |
-| 06 Strategic issue | Paper handout, group statement, reveal proposed issue | 7 |
-| 07 Alternatives | Paper handout, then compare three alternatives side-by-side | 10 |
-| 08 Recommendation | Class vote, reveal suggested choice, 90-day plan | 6 |
-| 09 Line of sight | Trace evidence to execution and spot unsupported leap | 6 |
-| 10 Debrief | Three reflection questions and final takeaway | 4 |
+## Updated activity sequence
 
-## Key controls
+| Step | Activity |
+| --- | --- |
+| 01 | Opening 15-question case-facts quiz and qualitative performance discussion |
+| 02 | Large-card PESTEL category selection, cumulative PESTEL summary; Porter’s Five Forces drag-and-drop + pressure ratings |
+| 03 | **Internal Analysis**: student-submitted resource/capability tiles for other groups to classify; 6 sequential VRIO resources |
+| 04 | Drag-and-drop SWOT, including unsupported claims |
+| 05 | Groups shortlist 5 concerns on paper; facilitators enter 1 concern per group into a shared pool |
+| 06 | Symptoms vs. strategic concerns vs. proposed solutions sorting; groups independently write a strategic-issue sentence |
+| 07 | Group analysis of three distinct alternatives: affordable AI-assisted production, strategic advice only, hybrid strategy + production |
+| 08 | Class recommendation vote, then optional team interpretation and bounded 90-day pilot |
+| 09 | Line-of-sight / unsupported-claim challenge |
+| 10 | Winning-group leaderboard, brief closing question and prize |
 
-The **Facilitator** button provides navigation, fullscreen, projector mode, a pauseable timer, optional team scoring and a reset. Answers and suggested interpretations are hidden until **Check / Reveal** is pressed. Local browser storage remembers scores, card selections, votes and progress. There is no backend or shared live multiplayer; participants discuss and the facilitator controls one projector computer.
+The old strategic group mapping activity and overlapping opening analysis slides were removed.
 
-Mobile-friendly controls: PESTEL, VRIO and concerns use tap/click. SWOT supports native HTML5 drag and drop **and** tap a card followed by its category, which works on touchscreens. Strategic group mapping supports drag/drop from the provider list, or tap a provider then tap the map. Handouts print from browser pop-ups; allow pop-ups to print.
+## Controls and privacy
 
-## Editing content
+- **Facilitator** menu: change group count (2–4), rename groups, manually adjust scores **+1 / −1**, set the current turn, control the timer, and navigate stages.
+- **Correct +1** / **Wrong → Pass** controls appear above each activity. One round cannot be awarded repeatedly until its item/question changes.
+- Students' short answers in the Resources and Concerns sections are typed on the facilitator device. Browser spellcheck can flag typos, but it is **not an AI grammar-grading service**. Facilitators should review spelling and content and decide when alternative classifications are valid.
+- One facilitator device runs the game. The site stores class inputs and scores in the current browser’s **localStorage**; it does not have an online multiplayer server.
+- PESTEL, SWOT, resource/capability and symptoms/concerns/solutions support tap/click, with drag-and-drop on desktop.
+- A wrong-answer tone depends on a user interaction and browser audio support.
 
-- `data/activities.js`: editable data object exported as `content`, including `quiz`, `pestel`, `forces`, `resources`, `vrio`, `swot`, `concerns`, and `alternatives`.
-- `app.js`: view and interaction logic.
-- `styles.css`: appearance and projector/mobile styles.
-- `index.html`: page metadata.
+## Start and publish
 
-Please use only case-supported facts and label an inference or hypothetical question. Chapter 3 financial ratios cannot be calculated without financial statements. Five Forces and group-map estimates are discussion judgments rather than verified industry measurements. VRIO unknowns should remain explicitly unknown.
+Run locally with `python3 -m http.server 8000`, then open `http://localhost:8000`. ES modules generally require a local web server rather than `file://`.
 
-## Publish with GitHub Pages
+For GitHub Pages use **Settings → Pages → Deploy from branch → main / (root)**, or the bundled GitHub Actions Pages workflow.
 
-1. Sign in to GitHub and visit the repository.
-2. Under **Settings → Pages → Build and deployment**, choose **Deploy from branch**, branch `main`, folder `/(root)`, and save. This simple static configuration doesn't require a Node build.
-3. Alternatively, select **GitHub Actions** and use `.github/workflows/deploy.yml`; do not expect both deployment modes to run simultaneously.
-4. Check the **Actions** tab for a successful deployment, then open the project URL. A 404 usually means Pages has not yet published or the branch/folder is wrong.
-5. Verify the homepage, quiz check/reveal, SWOT drag and tap, VRIO steps and printable handouts before class.
+## Content and source
 
-## Source attribution
+`data/activities.js` contains the editable case questions, facts, explanations and alternative models. `app.js` handles interactions; `styles.css` controls appearance.
 
-*Harbourline Creative: Creating and delivering value in the age of AI.* BADM 470 Case Facilitation #5, fictional teaching case, revised October 6, 2026. The case may be edited and used for educational purposes; retain its disclosure and source acknowledgement with distributed copies. Course framework: Anderson, L., Buengel, D., & Simpson, J. J. (2025). *Strategic Management and Case Analysis: An Integrated Approach*. Virginia Tech Publishing. https://doi.org/10.21061/strategicmanagementandcaseanalysis
+The case does not supply financial statements, representative survey estimates or enough competitor data for invented numerical analysis. Treat VRIO unknowns and PESTEL gaps as real limits. Alternative conclusions can be valid if logically justified.
+
+*Harbourline Creative: Creating and delivering value in the age of AI.* Fictional BADM 470 case, revised October 6, 2026. Retain its own required disclosure and source acknowledgement when distributing the case. Course framework: Anderson, Buengel, & Simpson (2025), *Strategic Management and Case Analysis: An Integrated Approach*, Virginia Tech Publishing, https://doi.org/10.21061/strategicmanagementandcaseanalysis.
