@@ -1,4 +1,4 @@
-/* EDITABLE BADM 470 CASE CONTENT — facts sourced to fictional Harbourline Creative case; interpretations labeled in explanations. */
+/* BADM 470 Harbourline Creative: class-first activities; case interpretations require facilitator reasoning. */
 export const content = {
   "steps": [
     {
@@ -12,17 +12,17 @@ export const content = {
     {
       "id": "external",
       "num": "02",
-      "name": "External environment",
+      "name": "External analysis",
       "title": "Market Forces Lab",
-      "subtitle": "PESTEL · Five Forces · Strategic map",
+      "subtitle": "PESTEL flashcards · Five Forces drag & drop",
       "minutes": 15
     },
     {
       "id": "internal",
       "num": "03",
-      "name": "Internal environment",
+      "name": "Internal analysis",
       "title": "Capability Lab",
-      "subtitle": "10 flashcards · 6 VRIO tests",
+      "subtitle": "Student tiles · resource/capability · VRIO",
       "minutes": 15
     },
     {
@@ -37,24 +37,24 @@ export const content = {
       "id": "concerns",
       "num": "05",
       "name": "Strategic concerns",
-      "title": "Choose the Five",
-      "subtitle": "Select the five most important concerns",
+      "title": "Student concern pool",
+      "subtitle": "Each group contributes one concise concern",
       "minutes": 7
     },
     {
       "id": "issue",
       "num": "06",
       "name": "Strategic issue",
-      "title": "Define the Real Problem",
-      "subtitle": "Group handout · one-sentence challenge",
+      "title": "Issue and category sort",
+      "subtitle": "Symptoms · concerns · solutions",
       "minutes": 7
     },
     {
       "id": "alternatives",
       "num": "07",
       "name": "Strategic alternatives",
-      "title": "The Boardroom",
-      "subtitle": "Group handout · compare three paths",
+      "title": "Three different strategies",
+      "subtitle": "Assign A/B/C · compare benefits and risks",
       "minutes": 10
     },
     {
@@ -77,8 +77,8 @@ export const content = {
       "id": "debrief",
       "num": "10",
       "name": "Closing debrief",
-      "title": "What Did We Learn?",
-      "subtitle": "Reflection · unanswered questions",
+      "title": "Winning group",
+      "subtitle": "Leaderboard · class prize · close",
       "minutes": 4
     }
   ],
@@ -720,33 +720,33 @@ export const content = {
   "alternatives": [
     {
       "id": "A",
-      "title": "Improve the Existing Model",
-      "subtitle": "Defend and improve",
-      "description": "Keep integrated creative services. Use AI to shorten routine work, explain human review and strategic reasoning more clearly, and improve reports within existing arrangements.",
-      "benefit": "Least disruptive; protects familiar services and relationships.",
-      "risk": "Clients may still see an expensive content-production model.",
-      "capability": "Standardized AI review, clearer client communication, baseline measurement.",
-      "assumption": "Efficiency and better explanations will be sufficient for enough existing clients."
+      "title": "Affordable AI-assisted Production",
+      "subtitle": "Price / efficiency",
+      "description": "Focus on fast, affordable, AI-assisted content packages for smaller clients, with human quality checks and transparent AI disclosure. Reduce cost and keep offerings tightly scoped.",
+      "benefit": "Accessible and efficient; fits clients seeking predictable routine content at competitive prices.",
+      "risk": "Easy to substitute; pricing pressure and quality control may weaken margins.",
+      "capability": "Standardized workflows, brand review, clear scope, efficient delivery.",
+      "assumption": "Enough price-sensitive clients will choose a managed service rather than do the work themselves."
     },
     {
       "id": "B",
-      "title": "Transparent Two-Part Offer",
-      "subtitle": "Differentiate and test",
-      "description": "Offer clearly priced AI-assisted content production alongside a separately scoped, paid marketing diagnostic and advisory service. Test the structure with the 5 clients who committed to paid trials.",
-      "benefit": "Makes decision-making value visible and accommodates clients with different needs.",
-      "risk": "Demand for separately purchased advice remains unproven; research capacity is thin.",
-      "capability": "Service definitions, review and disclosure standards, analytical partner, staff training.",
-      "assumption": "Some buyers will pay for credible, documented strategic judgment."
+      "title": "Strategic Marketing Advice Only",
+      "subtitle": "Specialization / value",
+      "description": "Specialize in customer research, brand positioning and marketing decisions for clients who can produce their own routine content. No routine content service included. Disclose permitted AI support where used.",
+      "benefit": "Focuses on human judgment, targeting and client decisions rather than content volume.",
+      "risk": "Unproven demand for separately priced advice; limited research and measurement capabilities.",
+      "capability": "Reliable client research, documented strategy, advisory skills, measurement partner where needed.",
+      "assumption": "Clients will pay enough for credible independent marketing advice."
     },
     {
       "id": "C",
-      "title": "Refocus on Strategic Advisory",
-      "subtitle": "Specialize and transition",
-      "description": "Prioritize research, positioning, client diagnosis and performance learning. Gradually reduce dependence on routine creative production while retaining only strategically useful execution.",
-      "benefit": "Could differentiate on judgment rather than content volume.",
-      "risk": "Major execution risk because current analytics, research and knowledge-transfer routines are limited.",
-      "capability": "Stronger research and measurement expertise, repositioned sales approach, client approvals.",
-      "assumption": "Enough clients will buy premium advice, and the agency can build the delivery capability."
+      "title": "Hybrid: Strategy + AI-assisted Production",
+      "subtitle": "Integrated service / differentiated",
+      "description": "Provide strategic diagnostics and marketing advice alongside transparent AI-assisted production, separately scoped and priced where appropriate. Test the approach with the five committed trial clients.",
+      "benefit": "Serves clients needing either advice or complete delivery and makes judgment more visible.",
+      "risk": "More coordination and training; pricing and advisory demand are still unproven.",
+      "capability": "Client diagnosis, AI review standards, analytics support, training, permission controls.",
+      "assumption": "The agency can build repeatable advisory quality and demonstrate why buyers should pay for it."
     }
   ]
 };
